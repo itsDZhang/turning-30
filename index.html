@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>David Turns 30 on a Mountain · Banff Sunshine Village · Jan 15–18, 2027</title>
+  <meta name="description" content="Three days of Canadian Rockies powder over MLK weekend for David's 30th. Zero PTO, a stronger dollar, and one of the best snow resorts in North America. You're invited.">
+  <meta name="theme-color" content="#060a18">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Link previews (iMessage / WhatsApp / Slack) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="David turns 30 on a mountain. You're coming.">
+  <meta property="og:description" content="Banff Sunshine Village · Jan 15–18, 2027 · MLK weekend · Zero PTO · A stronger dollar · Nine metres of snow.">
+  <meta property="og:url" content="https://itsdzhang.github.io/david-turns-30/">
+  <meta property="og:image" content="https://itsdzhang.github.io/david-turns-30/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="David turns 30 on a mountain. You're coming.">
+  <meta name="twitter:description" content="Banff Sunshine Village · Jan 15–18, 2027 · MLK weekend · Zero PTO.">
+  <meta name="twitter:image" content="https://itsdzhang.github.io/david-turns-30/assets/og.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-scene="night">
+
+  <!-- Fixed backdrop layers -->
+  <div class="sky" aria-hidden="true">
+    <div class="sky__layer sky__layer--night"></div>
+    <div class="sky__layer sky__layer--alpine"></div>
+    <div class="sky__layer sky__layer--dawn"></div>
+    <div class="sky__layer sky__layer--gold"></div>
+  </div>
+  <canvas id="snow" class="snow" aria-hidden="true"></canvas>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="hero" data-scene="night">
+      <div class="aurora" aria-hidden="true">
+        <span class="aurora__blob aurora__blob--a"></span>
+        <span class="aurora__blob aurora__blob--b"></span>
+        <span class="aurora__blob aurora__blob--c"></span>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">
+          <span class="chip chip--teal">Jan 15–18, 2027</span>
+          <span class="chip">Banff Sunshine Village</span>
+        </p>
+        <h1 class="hero__title">
+          <span class="hero__line">David</span>
+          <span class="hero__line">turns <em>30</em></span>
+          <span class="hero__line">on top of</span>
+          <span class="hero__line hero__line--accent">a mountain.</span>
+        </h1>
+        <p class="hero__sub">
+          Three days of Canadian Rockies powder over <strong>MLK weekend</strong>.
+          You're invited. Actually, no. You're coming.
+        </p>
+
+        <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Countdown to the trip">
+          <div class="countdown__cell"><span class="countdown__num" data-cd="d">—</span><span class="countdown__lbl">days</span></div>
+          <div class="countdown__cell"><span class="countdown__num" data-cd="h">—</span><span class="countdown__lbl">hrs</span></div>
+          <div class="countdown__cell"><span class="countdown__num" data-cd="m">—</span><span class="countdown__lbl">min</span></div>
+          <div class="countdown__cell"><span class="countdown__num" data-cd="s">—</span><span class="countdown__lbl">sec</span></div>
+        </div>
+        <p class="countdown__until">until first chair</p>
+
+        <a class="btn btn--ghost hero__cta" href="#pitch">Convince me ↓</a>
+      </div>
+
+      <!-- Parallax mountains -->
+      <div class="mountains" aria-hidden="true">
+        <svg class="mtn mtn--back" data-depth="0.12" viewBox="0 0 1440 420" preserveAspectRatio="none">
+          <path d="M0 420V300L90 250L160 290L250 180L330 240L420 140L520 230L600 190L700 110L790 200L870 160L960 240L1050 150L1150 230L1230 190L1320 260L1440 170V420Z" fill="#1a2550"/>
+          <path d="M700 110L730 148L690 142Z M420 140L445 170L405 165Z M1050 150L1075 182L1032 176Z M250 180L270 205L236 200Z" fill="#dfe8ff" opacity=".85"/>
+        </svg>
+        <svg class="mtn mtn--mid" data-depth="0.28" viewBox="0 0 1440 420" preserveAspectRatio="none">
+          <path d="M0 420V330L110 280L200 320L300 230L380 300L470 210L560 290L650 240L760 170L850 260L940 220L1030 300L1120 230L1220 290L1320 250L1440 310V420Z" fill="#111a3a"/>
+          <path d="M760 170L790 210L740 205Z M470 210L495 242L450 238Z M1120 230L1145 262L1100 256Z" fill="#c8d6ff" opacity=".7"/>
+        </svg>
+        <svg class="mtn mtn--front" data-depth="0.5" viewBox="0 0 1440 420" preserveAspectRatio="none">
+          <path d="M0 420V360L120 320L220 350L330 300L420 345L520 300L640 360L740 320L860 370L980 310L1100 360L1220 330L1340 370L1440 340V420Z" fill="#070b1a"/>
+          <!-- tiny trees -->
+          <g fill="#040710">
+            <path d="M300 345l8-22 8 22Z M320 352l7-18 7 18Z M1000 340l8-22 8 22Z M1020 346l7-18 7 18Z M600 362l7-18 7 18Z"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scrollcue" aria-hidden="true"><span></span></div>
+    </header>
+
+    <!-- ============ THE PITCH ============ -->
+    <section class="section section--pitch" id="pitch" data-scene="night">
+      <div class="wrap">
+        <p class="eyebrow reveal">The deal, in 20 seconds</p>
+        <h2 class="display reveal" style="--d:.05s">Thirty only happens once.<br><span class="grad">Let's not do it at a bar.</span></h2>
+
+        <ul class="punch">
+          <li class="punch__item reveal" style="--d:.1s">
+            <span class="punch__icon">🗓️</span>
+            <div><strong>Zero PTO.</strong> Monday Jan 18 is Martin Luther King Jr. Day. Fly out Friday after work, land Monday night.</div>
+          </li>
+          <li class="punch__item reveal" style="--d:.18s">
+            <span class="punch__icon">💸</span>
+            <div><strong>Your dollar goes further.</strong> Prices are in Canadian dollars. US$1 buys roughly <span data-rate-inline>CA$1.37</span>. Everything's basically on sale.</div>
+          </li>
+          <li class="punch__item reveal" style="--d:.26s">
+            <span class="punch__icon">🏂</span>
+            <div><strong>Real snow. Real mountain.</strong> Sunshine Village gets up to 9 metres of natural snow a year and sits at 2,160 m inside Banff National Park.</div>
+          </li>
+          <li class="punch__item reveal" style="--d:.34s">
+            <span class="punch__icon">👥</span>
+            <div><strong>January = no crowds.</strong> It's the locals' secret window: deep snow, short lines, cheaper rooms than Feb or March.</div>
+          </li>
+        </ul>
+
+        <p class="lede reveal" style="--d:.4s">
+          Snowboarder, skier, or “I'll hold the beers in the lodge” — there's a version of this weekend for you. Keep scrolling.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ THE MOUNTAIN ============ -->
+    <section class="section section--mountain" id="mountain" data-scene="alpine">
+      <div class="wrap">
+        <p class="eyebrow reveal">The resort</p>
+        <h2 class="display reveal" style="--d:.05s">Banff Sunshine Village is <span class="grad grad--ice">absurd.</span></h2>
+        <p class="lede reveal" style="--d:.1s">
+          It sits <em>on</em> the Continental Divide, straddling the Alberta–British Columbia border, inside a UNESCO World Heritage national park.
+          You ride a 15–20 minute gondola just to reach the village where the lifts start. It's the highest-elevation resort in the Canadian Rockies, and the snow is all natural.
+        </p>
+
+        <div class="stats">
+          <div class="stat reveal" style="--d:.05s"><span class="stat__num"><span data-count="3358" data-format="comma">0</span></span><span class="stat__lbl">skiable acres</span></div>
+          <div class="stat reveal" style="--d:.1s"><span class="stat__num"><span data-count="9">0</span><small> m</small></span><span class="stat__lbl">snowfall a year (30 ft)</span></div>
+          <div class="stat reveal" style="--d:.15s"><span class="stat__num"><span data-count="3">0</span></span><span class="stat__lbl">mountains, one pass</span></div>
+          <div class="stat reveal" style="--d:.2s"><span class="stat__num"><span data-count="12">0</span></span><span class="stat__lbl">lifts</span></div>
+          <div class="stat reveal" style="--d:.25s"><span class="stat__num"><span data-count="130">0</span><small>+</small></span><span class="stat__lbl">named runs</span></div>
+          <div class="stat reveal" style="--d:.3s"><span class="stat__num"><span data-count="2730" data-format="comma">0</span><small> m</small></span><span class="stat__lbl">summit elevation (8,954 ft)</span></div>
+          <div class="stat reveal" style="--d:.35s"><span class="stat__num"><span data-count="1070" data-format="comma">0</span><small> m</small></span><span class="stat__lbl">vertical drop (3,514 ft)</span></div>
+          <div class="stat reveal" style="--d:.4s"><span class="stat__num"><span data-count="7">0</span></span><span class="stat__lbl">month season, Nov → May</span></div>
+        </div>
+
+        <div class="feature reveal" style="--d:.1s">
+          <div class="feature__art" aria-hidden="true">
+            <svg viewBox="0 0 320 160" class="divide">
+              <defs>
+                <linearGradient id="dg" x1="0" x2="1"><stop offset="0" stop-color="#5df2c9"/><stop offset="1" stop-color="#9fd6ff"/></linearGradient>
+              </defs>
+              <path d="M0 150 L60 90 L110 120 L160 40 L210 110 L260 70 L320 150 Z" fill="#0f1a3d"/>
+              <path d="M160 40 L175 62 L145 60 Z" fill="#e6efff"/>
+              <path class="divide__line" d="M160 40 V160" stroke="url(#dg)" stroke-width="2" stroke-dasharray="6 6"/>
+              <text x="150" y="30" text-anchor="end" fill="#9fd6ff" font-size="12" font-family="Inter">BC</text>
+              <text x="170" y="30" text-anchor="start" fill="#5df2c9" font-size="12" font-family="Inter">AB</text>
+            </svg>
+          </div>
+          <div class="feature__body">
+            <h3>Ride from one province into another.</h3>
+            <p>The Great Divide chair tops out on the actual Continental Divide. Drop in on the British Columbia side, carve back into Alberta. Try explaining that at your next team lunch.</p>
+          </div>
+        </div>
+
+        <div class="feature feature--flip reveal" style="--d:.1s">
+          <div class="feature__art feature__art--snow" aria-hidden="true">
+            <div class="snowmeter">
+              <div class="snowmeter__bar"><span></span></div>
+              <div class="snowmeter__you">you<br>↓</div>
+            </div>
+          </div>
+          <div class="feature__body">
+            <h3>Nine metres of the good stuff.</h3>
+            <p>That's a three-storey building of snow every season, almost none of it man-made. Sunshine's high alpine bowls hold powder for days after a storm. January is peak storm season.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RIDE OR SKI ============ -->
+    <section class="section section--terrain" id="terrain" data-scene="alpine">
+      <div class="wrap">
+        <p class="eyebrow reveal">Snowboarding &amp; skiing</p>
+        <h2 class="display reveal" style="--d:.05s">Pick your <span class="grad grad--ice">lane.</span></h2>
+        <p class="lede reveal" style="--d:.1s">Three mountains, 20% beginner / 55% intermediate / 25% expert. One lift ticket covers all of it. Skiers and snowboarders ride the same lifts, so no one gets ditched.</p>
+        <p class="swipe-hint reveal" style="--d:.15s" aria-hidden="true">swipe →</p>
+      </div>
+
+      <div class="rail reveal" style="--d:.15s" tabindex="0" aria-label="Terrain options, scroll horizontally">
+        <article class="card card--green">
+          <div class="card__tag">Never ridden</div>
+          <h3>Mt. Standish</h3>
+          <p>Wide, mellow greens and a dedicated learning area. Book a lesson on day one. By day two you're linking turns and talking trash. Rentals are right at the village, so you need to bring exactly nothing.</p>
+          <div class="card__pill-row"><span class="pill">Lessons</span><span class="pill">Rentals on-site</span><span class="pill">Magic carpet</span></div>
+        </article>
+        <article class="card card--blue">
+          <div class="card__tag">Cruiser</div>
+          <h3>Lookout Mountain</h3>
+          <p>Long, high-alpine groomers with 360° views of the Rockies. Hit the Great Divide chair and ride across the Alberta–BC border. This is where most of the crew will spend Saturday.</p>
+          <div class="card__pill-row"><span class="pill">Groomers</span><span class="pill">Big views</span><span class="pill">Continental Divide</span></div>
+        </article>
+        <article class="card card--black">
+          <div class="card__tag">Send it</div>
+          <h3>Goat's Eye Mountain</h3>
+          <p>Steeps, chutes, and tree runs that hold snow for days. Then there's <strong>Delirium Dive</strong> and <strong>Wild West</strong>, some of the gnarliest in-bounds terrain in North America. You need an avalanche transceiver, shovel, probe, and a partner to drop in. Gear is rentable.</p>
+          <div class="card__pill-row"><span class="pill">Double blacks</span><span class="pill">Delirium Dive</span><span class="pill">Powder stashes</span></div>
+        </article>
+        <article class="card card--park">
+          <div class="card__tag">Park rat</div>
+          <h3>Terrain Park</h3>
+          <p>Jumps, rails, and boxes progressing from small to “why did I do that.” It's on Mt. Standish, so the beginners can watch you eat it from the chairlift.</p>
+          <div class="card__pill-row"><span class="pill">Jumps</span><span class="pill">Rails</span><span class="pill">Content</span></div>
+        </article>
+        <article class="card card--powder">
+          <div class="card__tag">Powder day</div>
+          <h3>Storm cycle</h3>
+          <p>January is the snowiest stretch of the season. If a storm rolls in, we're first on the gondola and lapping Goat's Eye trees until our legs quit.</p>
+          <div class="card__pill-row"><span class="pill">First chair</span><span class="pill">Face shots</span></div>
+        </article>
+        <article class="card card--chill">
+          <div class="card__tag">Not riding?</div>
+          <h3>Still come.</h3>
+          <p>Sightseeing gondola ticket, snowshoe tours, hot springs, Banff's restaurants and shops, skating on frozen Lake Louise. You'll have a better weekend than the people on skis.</p>
+          <div class="card__pill-row"><span class="pill">Hot springs</span><span class="pill">Lake Louise</span><span class="pill">Après</span></div>
+        </article>
+      </div>
+
+      <div class="wrap">
+        <div class="note reveal">
+          <strong>Pass holders:</strong> Sunshine is part of SkiBig3 (with Lake Louise &amp; Norquay) and is on the <strong>Ikon Pass</strong>. If you have one, your lift tickets may already be paid for. Check your tier.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ONCE IN A LIFETIME ============ -->
+    <section class="section section--once" id="once" data-scene="dawn">
+      <div class="wrap">
+        <p class="eyebrow reveal">Once in a lifetime</p>
+        <h2 class="display reveal" style="--d:.05s">The story you'll <span class="grad grad--warm">still be telling at 60.</span></h2>
+
+        <ol class="moments">
+          <li class="moment reveal" style="--d:.05s">
+            <span class="moment__num">01</span>
+            <div>
+              <h3>Hot springs at -15°C</h3>
+              <p>Banff Upper Hot Springs: 1,585 m up, 38°C water, steam rolling off into frozen air, mountains in every direction. Après-ski does not get better than this.</p>
+            </div>
+          </li>
+          <li class="moment reveal" style="--d:.1s">
+            <span class="moment__num">02</span>
+            <div>
+              <h3>Skate across Lake Louise</h3>
+              <p>The lake freezes into a rink with the Victoria Glacier as the backdrop and a castle-hotel on the shore. It's one of the most photographed places on Earth and we'll be standing in the middle of it.</p>
+            </div>
+          </li>
+          <li class="moment reveal" style="--d:.15s">
+            <span class="moment__num">03</span>
+            <div>
+              <h3>Walk through a frozen canyon</h3>
+              <p>Johnston Canyon in winter: catwalks bolted to canyon walls, waterfalls frozen solid into blue ice. Ice cleats on, cameras out.</p>
+            </div>
+          </li>
+          <li class="moment reveal" style="--d:.2s">
+            <span class="moment__num">04</span>
+            <div>
+              <h3>Maybe, the northern lights</h3>
+              <p>Banff sits under some of the darkest skies in North America and January nights are long. No promises, but if the forecast lights up, we're driving to Lake Minnewanka at midnight.</p>
+            </div>
+          </li>
+          <li class="moment reveal" style="--d:.25s">
+            <span class="moment__num">05</span>
+            <div>
+              <h3>Elk in the street</h3>
+              <p>Banff is a town inside a national park. Elk wander past the coffee shops. You will absolutely stop traffic to take a photo. Everyone does.</p>
+            </div>
+          </li>
+          <li class="moment reveal" style="--d:.3s">
+            <span class="moment__num">06</span>
+            <div>
+              <h3>Ring in 30 at altitude</h3>
+              <p>A birthday toast at the top of a 2,730 m peak with people I actually like. That's the whole plan. That's the only plan.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ THE WEEKEND ============ -->
+    <section class="section section--plan" id="plan" data-scene="dawn">
+      <div class="wrap">
+        <p class="eyebrow reveal">How amazing this trip will be</p>
+        <h2 class="display reveal" style="--d:.05s">The weekend, <span class="grad grad--warm">roughly.</span></h2>
+        <p class="lede reveal" style="--d:.1s">Four days, three nights, three ride days, one birthday. Loose on purpose. The mountain decides.</p>
+
+        <ol class="timeline">
+          <li class="tl reveal" style="--d:.05s">
+            <div class="tl__date"><span>Fri</span><strong>15</strong></div>
+            <div class="tl__body">
+              <h3>Land &amp; load in</h3>
+              <p>Fly into Calgary (YYC) after work. 90-minute drive west on the Trans-Canada as the Rockies rise up in front of you. Check in, late dinner in Banff, early night. Tomorrow is the point.</p>
+            </div>
+          </li>
+          <li class="tl reveal" style="--d:.1s">
+            <div class="tl__date"><span>Sat</span><strong>16</strong></div>
+            <div class="tl__body">
+              <h3>Ride day one</h3>
+              <p>Gondola up, warm-up laps on Standish, then Lookout and the Great Divide. Lunch at the village. Après at Mad Trapper's Saloon. Hot springs on the way back down.</p>
+            </div>
+          </li>
+          <li class="tl reveal" style="--d:.15s">
+            <div class="tl__date tl__date--bday"><span>Sun</span><strong>17</strong></div>
+            <div class="tl__body">
+              <h3>Ride day two · birthday dinner</h3>
+              <p>Goat's Eye for the senders, groomers for the cruisers, lesson #2 for the newbies. Summit toast at the top. Then the birthday dinner in Banff and whatever happens after.</p>
+            </div>
+          </li>
+          <li class="tl reveal" style="--d:.2s">
+            <div class="tl__date"><span>Mon</span><strong>18</strong></div>
+            <div class="tl__body">
+              <h3>Bonus morning · fly home</h3>
+              <p>MLK Day. Half-day laps or Lake Louise + Johnston Canyon, then back to YYC for evening flights. Back at your desk Tuesday with a story and a goggle tan.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ZERO PTO ============ -->
+    <section class="section section--pto" id="pto" data-scene="gold">
+      <div class="wrap">
+        <p class="eyebrow reveal">The calendar is on our side</p>
+        <h2 class="display reveal" style="--d:.05s"><span class="grad grad--gold">Zero</span> PTO days.</h2>
+        <p class="lede reveal" style="--d:.1s">Monday, January 18, 2027 is <strong>Martin Luther King Jr. Day</strong>, a US federal holiday. The trip is built around it.</p>
+
+        <div class="calendar reveal" style="--d:.1s" role="img" aria-label="January 2027 calendar with the 15th through 18th highlighted; the 18th is Martin Luther King Jr. Day">
+          <div class="calendar__head">January 2027</div>
+          <div class="calendar__grid">
+            <span class="cal__dow">S</span><span class="cal__dow">M</span><span class="cal__dow">T</span><span class="cal__dow">W</span><span class="cal__dow">T</span><span class="cal__dow">F</span><span class="cal__dow">S</span>
+            <span class="cal__pad"></span><span class="cal__pad"></span><span class="cal__pad"></span><span class="cal__pad"></span><span class="cal__pad"></span>
+            <span>1</span><span>2</span>
+            <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+            <span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+            <span class="cal__trip cal__trip--start">15<small>fly</small></span><span class="cal__trip">16<small>🏂</small></span>
+            <span class="cal__trip cal__trip--bday">17<small>🎂</small></span><span class="cal__trip cal__trip--end cal__trip--hol">18<small>MLK</small></span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
+            <span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+            <span>31</span>
+          </div>
+        </div>
+
+        <div class="pto-math reveal" style="--d:.15s">
+          <div class="pto-math__row"><span>Fly Friday after work</span><strong>0 days PTO</strong></div>
+          <div class="pto-math__row"><span>Fly Friday morning for an extra half-day on snow</span><strong>½ day PTO</strong></div>
+          <div class="pto-math__row"><span>Ride days</span><strong>3</strong></div>
+          <div class="pto-math__row"><span>Excuses remaining</span><strong>0</strong></div>
+        </div>
+
+        <p class="fine reveal" style="--d:.2s">Not a US holiday where you work? It's still a long weekend for most of the crew. Ask early and you're golden.</p>
+      </div>
+    </section>
+
+    <!-- ============ CURRENCY ============ -->
+    <section class="section section--money" id="money" data-scene="gold">
+      <div class="wrap">
+        <p class="eyebrow reveal">Currency</p>
+        <h2 class="display reveal" style="--d:.05s">Your dollar is <span class="grad grad--gold">bigger here.</span></h2>
+        <p class="lede reveal" style="--d:.1s">Canada runs on the Canadian dollar (CAD, the “loonie”). It has traded well below the US dollar for years. Every price tag you see is quietly discounted.</p>
+
+        <div class="fx reveal" style="--d:.1s">
+          <div class="fx__rate">
+            <span class="fx__label">US$1 =</span>
+            <span class="fx__value">CA$<span id="fxRate">1.37</span></span>
+            <span class="fx__badge" id="fxBadge">approx.</span>
+          </div>
+
+          <label class="fx__slider-label" for="fxSlider">Drag to convert</label>
+          <input id="fxSlider" class="fx__slider" type="range" min="10" max="500" step="5" value="100" aria-valuetext="100 US dollars">
+          <div class="fx__row">
+            <div class="fx__box"><span class="fx__cur">USD</span><strong>$<span id="fxUsd">100</span></strong></div>
+            <span class="fx__arrow" aria-hidden="true">→</span>
+            <div class="fx__box fx__box--cad"><span class="fx__cur">CAD</span><strong>$<span id="fxCad">137</span></strong></div>
+          </div>
+          <p class="fx__hint">A CA$<span data-cad-example="179">179</span> lift ticket is really <strong>US$<span data-usd-from="179">131</span></strong>. A CA$<span data-cad-example="9">9</span> après beer is <strong>US$<span data-usd-from="9">6.57</span></strong>. A CA$<span data-cad-example="45">45</span> dinner is <strong>US$<span data-usd-from="45">32.85</span></strong>.</p>
+        </div>
+
+        <ul class="tips">
+          <li class="tip reveal" style="--d:.05s"><span class="tip__icon">💳</span><div><strong>Tap-to-pay everywhere.</strong> Canada is more card-friendly than the US. You don't need to touch an ATM all weekend.</div></li>
+          <li class="tip reveal" style="--d:.1s"><span class="tip__icon">🚫</span><div><strong>Bring a no-foreign-transaction-fee card.</strong> Most travel cards (Chase Sapphire, Capital One, Amex Platinum/Gold) are fine. Skip the 3% fee on a basic card.</div></li>
+          <li class="tip reveal" style="--d:.15s"><span class="tip__icon">🧾</span><div><strong>Alberta has the lowest sales tax in Canada.</strong> Just 5% GST and no provincial sales tax. Prices on menus are pre-tax, like home.</div></li>
+          <li class="tip reveal" style="--d:.2s"><span class="tip__icon">🫶</span><div><strong>Tipping works like the US.</strong> 15–20% at restaurants and bars. Your card terminal will ask.</div></li>
+          <li class="tip reveal" style="--d:.25s"><span class="tip__icon">📱</span><div><strong>Phone.</strong> Most US plans include Canada roaming (T-Mobile, Verizon, AT&amp;T travel plans). Check yours before you fly.</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ BUDGET ============ -->
+    <section class="section section--budget" id="budget" data-scene="gold">
+      <div class="wrap">
+        <p class="eyebrow reveal">Ballpark budget</p>
+        <h2 class="display reveal" style="--d:.05s">What it <span class="grad grad--gold">roughly</span> costs.</h2>
+        <p class="lede reveal" style="--d:.1s">Per person, in US dollars, split-the-Airbnb style. Estimates, not quotes. Flights are the swing factor.</p>
+
+        <div class="budget reveal" style="--d:.1s">
+          <div class="budget__row"><span>Flights to Calgary (YYC)</span><span class="budget__amt">$250–600</span></div>
+          <div class="budget__row"><span>Lodging, 3 nights, shared</span><span class="budget__amt">$250–450</span></div>
+          <div class="budget__row"><span>Lift tickets, 3 days <small>(Ikon holders: $0)</small></span><span class="budget__amt">$330–400</span></div>
+          <div class="budget__row"><span>Rentals, 3 days <small>(skip if you own gear)</small></span><span class="budget__amt">$0–180</span></div>
+          <div class="budget__row"><span>Food, après, hot springs</span><span class="budget__amt">$200–300</span></div>
+          <div class="budget__row"><span>Car share / shuttle</span><span class="budget__amt">$60–120</span></div>
+          <div class="budget__row budget__row--total"><span>All in</span><span class="budget__amt">~$1,100–2,000</span></div>
+        </div>
+        <p class="fine reveal" style="--d:.15s">Lift tickets are cheaper bought online in advance than at the window. Lodging gets cheaper the more of us there are. Book flights early. January fares are reasonable but MLK weekend fills up.</p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ / OBJECTIONS ============ -->
+    <section class="section section--faq" id="faq" data-scene="night">
+      <div class="wrap">
+        <p class="eyebrow reveal">Your objections, handled</p>
+        <h2 class="display reveal" style="--d:.05s">“But—”</h2>
+
+        <div class="faq reveal" style="--d:.1s">
+          <details class="faq__item">
+            <summary>I've never snowboarded or skied.</summary>
+            <div class="faq__body"><p>Perfect. Sunshine's beginner area on Mt. Standish is wide and forgiving, and group lessons run every morning. Rent everything at the village. Day one you'll fall. Day two you'll ride. Day three you'll be insufferable about it.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Isn't it brutally cold?</summary>
+            <div class="faq__body"><p>It's cold. January at Sunshine is typically -8°C to -18°C (18°F to 0°F), colder on storm days. Solution: layers, a good shell, mittens over gloves, hand warmers, a neck gaiter. The gondola, lodges, and hot springs are all heated. Cold means the snow stays perfect.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>I don't have gear.</summary>
+            <div class="faq__body"><p>Rent a full setup (board/skis, boots, helmet) at the base or in Banff town. Jackets and pants are rentable too. You need to bring base layers, gloves, socks, and goggles or sunglasses.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Do I need a passport or visa?</summary>
+            <div class="faq__body"><p>You need a valid passport to fly into Canada. US citizens: no visa, no eTA. US green card holders: passport plus green card, no eTA. Other passports: check Canada's eTA/visa requirements. It's a 5-minute online form for most.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>How do we get from Calgary to Banff?</summary>
+            <div class="faq__body"><p>Rent an SUV together (about 90 minutes on a plowed four-lane highway), or take the Banff Airporter shuttle from the terminal. Sunshine's gondola base is 15 minutes past Banff town with free parking and a free shuttle from town.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Where are we staying?</summary>
+            <div class="faq__body"><p>Depends on headcount. Options: a big Airbnb or hotel in Banff town (restaurants, bars, hot springs nearby), or the Sunshine Mountain Lodge, Banff's only ski-in/ski-out hotel, which is on the mountain itself. Tell me you're in and I'll lock it.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>What if I can only do part of it?</summary>
+            <div class="faq__body"><p>Come for Saturday and Sunday. Fly in Friday night, out Sunday night. Still zero PTO, still two full days on snow, still the birthday dinner.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section section--cta" id="cta" data-scene="night">
+      <div class="wrap wrap--center">
+        <p class="eyebrow reveal">So.</p>
+        <h2 class="display display--xl reveal" style="--d:.05s">Are you <span class="grad">in?</span></h2>
+        <p class="lede reveal" style="--d:.1s">Flights get pricier every week you think about it. Lock the dates, tell me you're coming, and I'll handle the rest.</p>
+
+        <div class="cta-actions reveal" style="--d:.15s">
+          <button class="btn btn--primary btn--xl" id="imIn" type="button">I'm in 🏂</button>
+          <div class="cta-actions__row">
+            <button class="btn btn--ghost" id="shareBtn" type="button">Share with the group chat</button>
+            <a class="btn btn--ghost" href="david-turns-30.ics" download="david-turns-30.ics">Add to calendar</a>
+          </div>
+        </div>
+        <p class="cta-after" id="ctaAfter" hidden>Screenshot this and send it to David. Then go check flights to <strong>YYC, Jan 15–18</strong>.</p>
+
+        <div class="recap reveal" style="--d:.2s">
+          <div class="recap__row"><span>When</span><strong>Fri Jan 15 – Mon Jan 18, 2027</strong></div>
+          <div class="recap__row"><span>Where</span><strong>Banff Sunshine Village, Alberta, Canada</strong></div>
+          <div class="recap__row"><span>Fly to</span><strong>Calgary · YYC</strong></div>
+          <div class="recap__row"><span>PTO</span><strong>None (MLK Day)</strong></div>
+          <div class="recap__row"><span>Occasion</span><strong>David's 30th 🎂</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with an unreasonable amount of stoke. Resort facts from public sources and subject to change; confirm at <a href="https://www.skibanff.com" rel="noopener" target="_blank">skibanff.com</a>. Exchange rate is approximate and for fun.</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </footer>
+  </main>
+
+  <!-- Sticky bar -->
+  <div class="sticky" id="sticky" aria-hidden="true">
+    <div class="sticky__cd"><strong data-cd-days>—</strong> days to go</div>
+    <a href="#cta" class="btn btn--primary btn--sm">I'm in 🏂</a>
+  </div>
+
+  <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

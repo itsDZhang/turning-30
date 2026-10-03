@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//David Turns 30//Banff Sunshine Village//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:david-turns-30-banff-2027@itsdzhang.github.io
+DTSTAMP:20261003T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270119
+SUMMARY:David turns 30 🏂 Banff Sunshine Village
+LOCATION:Banff Sunshine Village\, Banff National Park\, Alberta\, Canada
+DESCRIPTION:Fri Jan 15 – Mon Jan 18\, 2027 (MLK weekend\, zero PTO). Fly to Calgary (YYC). Details: https://itsdzhang.github.io/david-turns-30/
+URL:https://itsdzhang.github.io/david-turns-30/
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:Book flights to YYC for David's 30th
+END:VALARM
+END:VEVENT
+END:VCALENDAR

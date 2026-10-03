@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#060a18;font-family:Inter,sans-serif;color:#f4f7ff}
+.bg{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%,#11204a 0%,#0a1130 50%,#060a18 100%)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.6;mix-blend-mode:screen}
+.a{width:600px;height:600px;left:-150px;top:-200px;background:radial-gradient(circle,rgba(93,242,201,.9),transparent 65%)}
+.b{width:600px;height:600px;right:-150px;top:-150px;background:radial-gradient(circle,rgba(139,124,255,.9),transparent 65%)}
+.c{width:500px;height:500px;left:400px;top:50px;background:radial-gradient(circle,rgba(255,110,156,.5),transparent 65%)}
+.stars{position:absolute;inset:0}
+.content{position:absolute;left:72px;top:54px;right:72px}
+.chip{display:inline-block;padding:10px 18px;border-radius:999px;border:1px solid rgba(93,242,201,.5);background:rgba(93,242,201,.1);color:#5df2c9;font-weight:700;font-size:20px;letter-spacing:.1em;text-transform:uppercase;margin-right:10px}
+.chip.w{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:#f4f7ff}
+h1{font-family:'Bebas Neue';font-weight:400;font-size:150px;line-height:.9;margin:26px 0 18px;letter-spacing:.01em}
+h1 em{font-style:normal;background:linear-gradient(100deg,#ffb84d,#ff6e9c);-webkit-background-clip:text;color:transparent}
+h1 span{background:linear-gradient(100deg,#5df2c9,#9fd6ff);-webkit-background-clip:text;color:transparent}
+p{font-size:28px;color:#a9b3cf;margin:0;font-weight:500}
+p b{color:#f4f7ff}
+svg.m{position:absolute;left:0;right:0;bottom:0;width:1200px;height:200px}
+</style></head><body>
+<div class="bg"></div><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+<canvas class="stars" id="st" width="1200" height="630"></canvas>
+<div class="content">
+  <div><span class="chip">Jan 15–18, 2027</span><span class="chip w">Banff Sunshine Village</span></div>
+  <h1>David turns <em>30</em><br><span>on a mountain.</span></h1>
+  <p>MLK weekend · <b>Zero PTO</b> · Stronger dollar · 9 m of snow · <b>You're coming.</b></p>
+</div>
+<svg class="m" viewBox="0 0 1440 420" preserveAspectRatio="none">
+  <path d="M0 420V300L90 250L160 290L250 180L330 240L420 140L520 230L600 190L700 110L790 200L870 160L960 240L1050 150L1150 230L1230 190L1320 260L1440 170V420Z" fill="#1a2550"/>
+  <path d="M700 110L730 148L690 142Z M420 140L445 170L405 165Z M1050 150L1075 182L1032 176Z M250 180L270 205L236 200Z" fill="#dfe8ff" opacity=".85"/>
+  <path d="M0 420V330L110 280L200 320L300 230L380 300L470 210L560 290L650 240L760 170L850 260L940 220L1030 300L1120 230L1220 290L1320 250L1440 310V420Z" fill="#111a3a"/>
+  <path d="M0 420V360L120 320L220 350L330 300L420 345L520 300L640 360L740 320L860 370L980 310L1100 360L1220 330L1340 370L1440 340V420Z" fill="#070b1a"/>
+</svg>
+<script>
+const c=document.getElementById('st'),x=c.getContext('2d');x.fillStyle='#fff';
+for(let i=0;i<220;i++){x.globalAlpha=.3+Math.random()*.7;x.beginPath();x.arc(Math.random()*1200,Math.random()*420,Math.random()*1.6+.3,0,7);x.fill()}
+</script>
+</body></html>

@@ -1,0 +1,12 @@
+{
+  "name": "David Turns 30 · Banff Sunshine Village",
+  "short_name": "David 30",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#060a18",
+  "theme_color": "#060a18",
+  "icons": [
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
