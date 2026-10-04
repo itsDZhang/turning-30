@@ -2,7 +2,7 @@
 
 Mobile-first invite site for a 30th-birthday snowboarding trip to **Banff Sunshine Village**, Jan 15–18, 2027 (MLK weekend).
 
-**Live:** https://itsdzhang.github.io/david-turns-30/
+**Live:** https://itsdzhang.github.io/turning-30/
 
 ## Stack
 Plain HTML, CSS, and vanilla JS. No build step, no dependencies beyond Google Fonts.
