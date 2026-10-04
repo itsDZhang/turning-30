@@ -450,6 +450,37 @@ body[data-scene="alpine"] .eyebrow { color: var(--ice); }
 .fx__arrow { font-size: 22px; color: var(--muted); }
 .fx__hint { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.6; }
 
+/* USD→CAD 5-year line chart */
+.fxchart {
+  margin: 0 0 22px; padding: 20px 18px 16px; border-radius: var(--radius);
+  background: var(--card); border: 1px solid var(--line);
+}
+.fxchart__head { margin: 0; }
+.fxchart__eyebrow { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.fxchart__headline { margin: 0 0 6px; font-family: var(--display); font-size: 36px; line-height: 1; color: var(--gold); letter-spacing: 0.01em; }
+.fxchart__sub { margin: 0 0 14px; font-size: 14px; color: var(--muted); line-height: 1.6; }
+.fxchart__sub strong { color: var(--ink); }
+.fxchart__plot { position: relative; border-radius: 12px; touch-action: pan-y; cursor: crosshair; }
+.fxchart__plot:focus-visible { outline: 3px solid var(--ice); outline-offset: 4px; }
+.fxchart__plot svg { display: block; width: 100%; height: auto; overflow: visible; }
+.fxchart__plot text { font-family: var(--body); font-size: 11px; fill: var(--muted); }
+.fxchart__plot .fxchart__lbl { fill: var(--ink); font-weight: 600; }
+.fxchart__plot .fxchart__lbl--peak { fill: var(--ink); }
+.fxchart__plot .fxchart__grid { stroke: rgba(255,255,255,0.09); stroke-width: 1; }
+.fxchart__plot .fxchart__xhair { stroke: rgba(255,255,255,0.4); stroke-width: 1; }
+.fxchart__readout {
+  margin: 10px 0 0; min-height: 22px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.fxchart__readout strong { color: var(--ink); font-weight: 600; }
+.fxchart__table { margin-top: 10px; font-size: 13px; color: var(--muted); }
+.fxchart__table summary { cursor: pointer; color: var(--ice); }
+.fxchart__table table { width: 100%; border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.fxchart__table th { text-align: left; font-weight: 500; padding: 4px 0 6px; color: var(--muted); }
+.fxchart__table th:last-child, .fxchart__table td:last-child { text-align: right; }
+.fxchart__table td { padding: 4px 0; border-top: 1px solid var(--line); }
+.fxchart__table td:last-child { color: var(--ink); }
+.fxchart__src { margin: 10px 0 0; font-size: 11px; color: var(--muted); opacity: 0.8; }
+
 .tips { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .tip {
   display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px;

@@ -392,6 +392,24 @@
           <p class="fx__hint">A CA$<span data-cad-example="179">179</span> lift ticket is really <strong>US$<span data-usd-from="179">131</span></strong>. A CA$<span data-cad-example="9">9</span> après beer is <strong>US$<span data-usd-from="9">6.57</span></strong>. A CA$<span data-cad-example="45">45</span> dinner is <strong>US$<span data-usd-from="45">32.85</span></strong>.</p>
         </div>
 
+        <figure class="fxchart reveal" style="--d:.12s" id="fxChart">
+          <figcaption class="fxchart__head">
+            <p class="fxchart__eyebrow">US$1 in Canadian dollars · last 5 years</p>
+            <p class="fxchart__headline" id="fxChartHeadline">Near a 5-year high.</p>
+            <p class="fxchart__sub" id="fxChartSub">US$1 buys about <strong>CA$1.42</strong> right now, up 14% from CA$1.24 five years ago.</p>
+          </figcaption>
+          <div class="fxchart__plot" id="fxChartPlot" tabindex="0" role="img" aria-labelledby="fxChartHeadline" aria-describedby="fxChartSub fxChartReadout"></div>
+          <p class="fxchart__readout" id="fxChartReadout" aria-live="polite">Tap or hover the line to see any month.</p>
+          <details class="fxchart__table">
+            <summary>See the numbers</summary>
+            <table>
+              <thead><tr><th scope="col">Month</th><th scope="col">US$1 in CAD</th></tr></thead>
+              <tbody id="fxChartTableBody"></tbody>
+            </table>
+          </details>
+          <p class="fxchart__src">Monthly averages of European Central Bank reference rates via frankfurter.dev.</p>
+        </figure>
+
         <ul class="tips">
           <li class="tip reveal" style="--d:.05s"><span class="tip__icon">💳</span><div><strong>Tap-to-pay everywhere.</strong> Canada is more card-friendly than the US. You don't need to touch an ATM all weekend.</div></li>
           <li class="tip reveal" style="--d:.1s"><span class="tip__icon">🚫</span><div><strong>Bring a no-foreign-transaction-fee card.</strong> Most travel cards (Chase Sapphire, Capital One, Amex Platinum/Gold) are fine. Skip the 3% fee on a basic card.</div></li>
@@ -449,13 +467,13 @@
         <p class="lede reveal" style="--d:.1s">Flights get pricier every week you think about it. Lock the dates, tell me you're coming, and I'll handle the rest.</p>
 
         <div class="cta-actions reveal" style="--d:.15s">
-          <button class="btn btn--primary btn--xl" id="imIn" type="button">I'm in 🏂</button>
+          <a class="btn btn--primary btn--xl" id="imIn" href="https://partiful.com/e/mryLE8MtW3r2xopD2bdF?c=_jem1-Ig" target="_blank" rel="noopener">I'm in 🏂 · RSVP</a>
           <div class="cta-actions__row">
             <button class="btn btn--ghost" id="shareBtn" type="button">Share with the group chat</button>
             <a class="btn btn--ghost" href="david-turns-30.ics" download="david-turns-30.ics">Add to calendar</a>
           </div>
         </div>
-        <p class="cta-after" id="ctaAfter" hidden>Screenshot this and send it to David. Then go check flights to <strong>YYC, Jan 15–18</strong>.</p>
+        <p class="cta-after" id="ctaAfter" hidden>RSVP on Partiful so David can get a headcount. Then go check flights to <strong>YYC, Jan 15–18</strong>.</p>
 
         <div class="recap reveal" style="--d:.2s">
           <div class="recap__row"><span>When</span><strong>Fri Jan 15 – Mon Jan 18, 2027</strong></div>
@@ -476,7 +494,7 @@
   <!-- Sticky bar -->
   <div class="sticky" id="sticky" aria-hidden="true">
     <div class="sticky__cd"><strong data-cd-days>—</strong> days to go</div>
-    <a href="#cta" class="btn btn--primary btn--sm">I'm in 🏂</a>
+    <a href="https://partiful.com/e/mryLE8MtW3r2xopD2bdF?c=_jem1-Ig" target="_blank" rel="noopener" class="btn btn--primary btn--sm">I'm in 🏂</a>
   </div>
 
   <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
